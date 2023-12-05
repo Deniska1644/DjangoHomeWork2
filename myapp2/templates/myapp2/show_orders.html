@@ -1,0 +1,26 @@
+{% extends 'myapp2/base.html' %}
+{% block content %}
+    <table>
+        <tr>
+            <th> покупатель</th>
+            <th>стоимость</th>
+            <th>время заказа</th>
+        </tr>
+        {% for i in order %}
+            <tr>
+                <td>{{ user }}</td>
+                <td>{{ i.total_price }}</td>
+                <td>{{ i.date_ordered }} 3</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <form method="post">
+        {% csrf_token %}
+        <select name="choice">
+            <option value='1'>За последний день</option>
+            <option value="2">За последние 2 дня</option>
+            <option value="7">За последнею неделю</option>
+        </select>
+        <input type="submit" value="take"/>
+    </form>
+{% endblock %}
