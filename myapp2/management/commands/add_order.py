@@ -6,8 +6,8 @@ class Command(BaseCommand):
     help = "Create order."
 
     def handle(self, *args, **kwargs):
-        for i in range(1, 3):
-            order = Order(customer=User.objects.get(id=i),
+        for i in range(1, 10):
+            order = Order(customer=User.objects.get(id=1),
                           total_price=14.22)
             order.save()
             order.products.add(Product.objects.get(id=i))
