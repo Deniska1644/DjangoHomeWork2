@@ -15,6 +15,7 @@ class Product(models.Model):
     description = models.CharField(max_length=300)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     quantity_product = models.IntegerField()
+    image = models.ImageField(blank=True, upload_to='media/')
 
 
 class Order(models.Model):
