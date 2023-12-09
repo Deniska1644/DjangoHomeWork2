@@ -1,0 +1,12 @@
+{% extends 'myapp2/base.html' %}
+{% block content %}
+    {% if context %}
+        {{ context }}
+    {% else %}
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Отправить">
+        </form>
+    {% endif %}
+{% endblock %}
