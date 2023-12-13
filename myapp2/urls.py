@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
@@ -7,4 +7,5 @@ urlpatterns = [
     path('orders/<int:id_user>', views.get_orders, name='get_orders'),
     path('user', views.user_form, name='user_form'),
     path('addimage', views.add_image_product, name=' add_image_product'),
+    path('__debug__/', include("debug_toolbar.urls")),
 ]
